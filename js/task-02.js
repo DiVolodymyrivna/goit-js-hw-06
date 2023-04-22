@@ -14,13 +14,13 @@ const ingredients = [
   'Condiments',
 ];
 
-
 let ingredientsList = document.getElementById("ingredients");
-const foodIngredients = ingredients.forEach(ingredient => {
+let fragment = document.createDocumentFragment();
+
+ingredients.forEach(ingredient => {
   let items = document.createElement("li");
   items.innerHTML = ingredient;
-  ingredientsList.append(items);
-  parent.append(...items)
+  fragment.appendChild(items);
 });
 
-console.log(foodIngredients);
+ingredientsList.appendChild(fragment);
